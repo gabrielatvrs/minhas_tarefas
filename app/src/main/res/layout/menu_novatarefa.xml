@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_menu"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.BottomSheet">
+
+    <FrameLayout
+            android:layout_width="170dp"
+            android:layout_height="7dp"
+            android:background="@drawable/arrastavel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nova Tarefa"
+                android:layout_marginTop="40dp"
+                android:gravity="start"
+                android:textSize="24dp"
+                android:textColor="@color/corTexto"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adicione uma tarefa que ainda será feita"
+                android:gravity="start"
+                android:textSize="14sp"
+                android:textColor="@color/corTexto"
+                android:layout_marginBottom="28dp"/>
+
+        <EditText
+                android:id="@+id/edtTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Título da tarefa"
+                android:textSize="16sp"
+                android:textColor="@color/corTextoOpaco"
+                android:layout_marginBottom="30dp"
+                android:background="@color/corInputs"
+                android:textColorHint="@color/corTextoOpaco"
+                android:paddingTop="16dp"
+                android:paddingBottom="19dp"
+                android:paddingStart="16dp"/>
+
+        <EditText
+                android:id="@+id/edtDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descrição da tarefa"
+                android:textSize="16sp"
+                android:textColor="@color/corTextoOpaco"
+                android:textColorHint="@color/corTextoOpaco"
+                android:layout_marginBottom="8dp"
+                android:background="@color/corInputs"
+                android:paddingTop="16dp"
+                android:paddingBottom="98dp"
+                android:paddingStart="16dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opcional"
+                android:textColor="@color/corTextoOpaco"
+                android:textSize="12sp"
+                android:paddingBottom="100dp"/>
+
+        <Button
+                android:id="@+id/btnCriarNovaTarefa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_botao"
+                android:text="Criar tarefa"
+                android:textSize="18dp"
+                android:textColor="#FFF"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

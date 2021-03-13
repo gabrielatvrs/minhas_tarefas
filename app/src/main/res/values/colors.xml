@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8B55CE</color>
+    <color name="corBase">#F3F3F3</color>
+    <color name="corBotao">#E16B6B</color>
+    <color name="corFundo">#E7D4FF</color>
+    <color name="corTexto">#222324</color>
+    <color name="corTextoOpaco">#5A5F69</color>
+    <color name="corInputs">#0A000000</color>
+    <color name="corArrastavel">#9C9C9C</color>
+</resources>

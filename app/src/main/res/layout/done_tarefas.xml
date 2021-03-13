@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".fragments.InProgressFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaTarefas"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            tools:listitem="@layout/item_tarefa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+            android:id="@+id/emptyTarefa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_vaziominhastarefas"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opa... Não há nada aqui!"
+                android:textSize="18dp"
+                android:layout_marginTop="30dp"
+        />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acredito no seu potencial de terminar\n
+uma tarefa hoje. ;)"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="14dp"
+        />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
