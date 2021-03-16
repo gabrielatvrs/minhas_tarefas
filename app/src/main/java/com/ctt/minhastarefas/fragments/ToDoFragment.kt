@@ -23,12 +23,25 @@ class ToDoFragment : Fragment() {
     private lateinit var toDoView: View
     private lateinit var rvTarefas: RecyclerView
     private lateinit var toDoAdapter: ToDoAdapter
+    private lateinit var edtPesquisar: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         toDoView = inflater.inflate(R.layout.fragment_tarefas, container, false)
+
+        model = ViewModelProviders.of(activity!!).get(TarefasViewModel::class.java)
+
+        model!!.tarefaAFazer.observe(viewLifecycleOwner, object : Observer<Tarefa> {
+            override fun onChanged(tarefa: Tarefa) {
+                if (emptyTarefa.visibility != View.GONE){
+                    mostrarRV()
+                }
+                listaDeTarefas.add(tarefa)
+                toDoAdapter!!.notifyDataSetChanged()
+            }
+        })
 
         return toDoView;
     }
