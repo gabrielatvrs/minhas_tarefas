@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.ctt.minhastarefas.model.Tarefa
 
 class TarefasViewModel : ViewModel() {
+
     val tarefaAFazer: MutableLiveData<Tarefa> by lazy {
         MutableLiveData<Tarefa>()
     }

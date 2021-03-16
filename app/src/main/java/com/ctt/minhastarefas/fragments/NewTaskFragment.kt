@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.core.text.set
 import androidx.lifecycle.ViewModelProviders
 import com.ctt.minhastarefas.R
 import com.ctt.minhastarefas.model.Tarefa
@@ -34,6 +35,8 @@ class NewTaskFragment : BottomSheetDialogFragment() {
         btnCriarTarefa.setOnClickListener {
             val titulo = edtTitulo.text.toString()
             val descricao = edtDescricao.text.toString()
+            edtTitulo.text.clear()
+            edtDescricao.text.clear()
 
             model!!.msgTarefaAFazer(
                 Tarefa(titulo = titulo, descricao = descricao)

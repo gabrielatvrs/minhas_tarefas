@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ctt.minhastarefas.R
+import com.ctt.minhastarefas.activities.MainActivity
 import com.ctt.minhastarefas.adapters.ToDoAdapter
 import com.ctt.minhastarefas.model.Tarefa
 import com.ctt.minhastarefas.viewmodel.TarefasViewModel
@@ -26,19 +28,7 @@ class ToDoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         toDoView = inflater.inflate(R.layout.fragment_tarefas, container, false)
-        model = ViewModelProviders.of(activity!!).get(TarefasViewModel::class.java)
-
-        model!!.tarefaAFazer.observe(this, object : Observer<Tarefa> {
-            override fun onChanged(tarefa: Tarefa) {
-                if (emptyTarefa.visibility != View.GONE){
-                    mostrarRV()
-                }
-                listaDeTarefas.add(tarefa)
-                toDoAdapter!!.notifyDataSetChanged()
-            }
-        })
 
         return toDoView;
     }
@@ -57,7 +47,6 @@ class ToDoFragment : Fragment() {
         rvTarefas = toDoView.findViewById(R.id.listaTarefas)
         toDoAdapter = ToDoAdapter(listaDeTarefas)
         rvTarefas.adapter = toDoAdapter
-
         rvTarefas.layoutManager = LinearLayoutManager(requireContext())
     }
 

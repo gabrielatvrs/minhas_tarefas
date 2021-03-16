@@ -26,6 +26,7 @@ class InProgressFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        
         inProgressView = inflater.inflate(R.layout.inprogress_tarefa, container, false)
         model = ViewModelProviders.of(activity!!).get(TarefasViewModel::class.java)
 
